@@ -1,0 +1,20 @@
+﻿namespace DbOperationsWithEFCore.Data
+{
+    public class Book
+    {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public int NoOfPages { get; set; }
+        public bool IsActive { get; set; }
+        public DateTime CreatedOn { get; set; }
+
+        public int LanguageId { get; set; }
+        public int? AuthorId { get; set; }
+
+        public virtual Language? Language { get; set; }  // comment this when testing ExplicitLoadingOneToMany in language controller 
+        public virtual Author? Author { get; set; }
+
+        //public ICollection<BookPrice> BookPrice { get; set; }
+    }
+}
